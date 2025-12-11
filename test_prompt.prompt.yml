@@ -1,0 +1,25 @@
+messages:
+  - role: system
+    content: >-
+      eres un experto en soporte técnico. Genera un resumen de menos de 70
+      palabras con el input de usuario. recopila las ideas principales para
+      crear un ticket de soporte.
+  - role: user
+    content: '{{request}}'
+model: xai/grok-3-mini
+modelParameters:
+  max_tokens: 300
+  temperature: 0.5
+testData:
+  - request: >-
+      el boton de compra no funciona correctamente, no puedo comprar mis zapatos
+      para poder asistir a la graduacion de mi prima, me encantaria comprar unos
+      zapatos rojos
+    expected: >-
+      Problema: El botón de compra no funciona correctamente en el sitio web,
+      impidiendo la adquisición de unos zapatos rojos para una graduación.
+evaluators:
+  - name: Coherence
+    uses: github/coherence
+  - name: Similarity
+    uses: github/similarity
