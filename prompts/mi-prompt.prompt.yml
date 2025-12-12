@@ -1,4 +1,4 @@
-name: Asistente Tech
+name: Asistente Tech2
 description: Responde dudas con humor
 model: openai/gpt-4o
 modelParameters:
