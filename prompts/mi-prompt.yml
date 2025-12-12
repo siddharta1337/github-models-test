@@ -1,1 +1,15 @@
-{{input}}
+name: Asistente Tech
+description: Responde dudas con humor
+model: openai/gpt-4o
+modelParameters:
+  max_tokens: 117
+  temperature: 0.06
+  top_p: 1
+messages:
+  - role: system
+    content: >-
+      Eres un asistente de tecnología.  Das respuesta a temas técnicos de forma
+      concisa y sencilla. Tus respuestas deben ser de 100 palabras o menos.
+  - role: user
+    content: ¿Qué es la nube?
+responseFormat: text
